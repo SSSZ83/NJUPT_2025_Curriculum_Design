@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Port Id="led1" Dir="OUT"/>
+		<Port Id="led2" Dir="OUT"/>
+		<Port Id="led3" Dir="OUT"/>
+		<Port Id="speaker" Dir="OUT"/>
+		<Port Id="end_flag" Dir="OUT"/>
+		<Port Id="clk_1k" Dir="IN"/>
+		<Port Id="clk_535k" Dir="IN"/>
+		<Port Id="matrix_col0" Dir="IN"/>
+		<Port Id="matrix_row0" Dir="OUT"/>
+		<Port Id="matrix_col1" Dir="IN"/>
+	</Ifc>
+</Interface>
+

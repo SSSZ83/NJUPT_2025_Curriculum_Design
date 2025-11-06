@@ -1,0 +1,7 @@
+verilog isim_temp "scale_divider.v"
+verilog isim_temp "octave_divider.v"
+verilog isim_temp "music_rom.v"
+verilog isim_temp "clk_div_8hz.v"
+verilog isim_temp "addr_control.v"
+verilog isim_temp "music_player.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

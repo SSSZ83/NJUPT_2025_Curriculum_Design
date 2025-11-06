@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/projects/B23020317/music_system_top_isim_beh.exe" -prj "C:/projects/B23020317/music_system_top_beh.prj" "work.music_system_top" "work.glbl" 

@@ -1,0 +1,68 @@
+
+# PlanAhead Generated IO constraints 
+
+NET "clk_1k" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "clk_1k" LOC = P124;
+
+# PlanAhead Generated IO constraints 
+
+NET "clk_535k" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "clk_535k" LOC = P125;
+NET "end_flag" LOC = P10;
+
+# PlanAhead Generated IO constraints 
+
+NET "end_flag" IOSTANDARD = LVCMOS33;
+NET "led1" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "led1" LOC = P12;
+NET "led2" LOC = P13;
+
+# PlanAhead Generated IO constraints 
+
+NET "led2" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "led3" LOC = P15;
+
+# PlanAhead Generated IO constraints 
+
+NET "led3" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "matrix_col0" LOC = P139;
+
+# PlanAhead Generated IO constraints 
+
+NET "matrix_col0" IOSTANDARD = LVCMOS33;
+NET "matrix_col0" PULLUP;
+NET "matrix_col1" IOSTANDARD = LVCMOS33;
+NET "matrix_col1" PULLUP;
+
+# PlanAhead Generated physical constraints 
+
+NET "matrix_col1" LOC = P135;
+NET "matrix_row0" LOC = P138;
+
+# PlanAhead Generated IO constraints 
+
+NET "matrix_row0" IOSTANDARD = LVCMOS33;
+NET "matrix_row0" PULLDOWN;
+
+# PlanAhead Generated physical constraints 
+
+NET "speaker" LOC = P3;
+
+# PlanAhead Generated IO constraints 
+
+NET "speaker" IOSTANDARD = LVCMOS33;

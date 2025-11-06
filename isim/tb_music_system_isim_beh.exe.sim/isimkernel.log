@@ -1,0 +1,28 @@
+Command line:
+   tb_music_system_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50546
+
+Wed Nov 05 09:25:08 2025
+
+
+ Elaboration Time: 0.15625 sec
+
+ Current Memory Usage: 730.198 Meg
+
+ Total Signals          : 77
+ Total Nets             : 90
+ Total Signal Drivers   : 36
+ Total Blocks           : 11
+ Total Primitive Blocks : 8
+ Total Processes        : 56
+ Total Traceable Variables  : 65
+ Total Scalar Nets and Variables : 562
+
+ Total Simulation Time: 0.296875 sec
+
+ Current Memory Usage: 730.198 Meg
+
+Wed Nov 05 09:25:20 2025
+

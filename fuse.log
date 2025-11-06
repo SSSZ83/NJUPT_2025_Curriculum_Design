@@ -1,0 +1,33 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/projects/B23020317/music_system_top_isim_beh.exe -prj C:/projects/B23020317/music_system_top_beh.prj work.music_system_top work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/projects/B23020317/scale_divider.v" into library work
+Analyzing Verilog file "C:/projects/B23020317/octave_divider.v" into library work
+Analyzing Verilog file "C:/projects/B23020317/music_rom.v" into library work
+Analyzing Verilog file "C:/projects/B23020317/clk_div_8hz.v" into library work
+Analyzing Verilog file "C:/projects/B23020317/addr_control.v" into library work
+Analyzing Verilog file "C:/projects/B23020317/song_selector.v" into library work
+Analyzing Verilog file "C:/projects/B23020317/music_player.v" into library work
+Analyzing Verilog file "C:/projects/B23020317/matrix_key_control.v" into library work
+Analyzing Verilog file "C:/projects/B23020317/music_system_top.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module matrix_key_control
+Compiling module song_selector
+Compiling module clk_div_8hz
+Compiling module addr_control
+Compiling module music_rom
+Compiling module scale_divider
+Compiling module octave_divider
+Compiling module music_player
+Compiling module music_system_top
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 7 sub-compilation(s) to finish...
+Compiled 10 Verilog Units
+Built simulation executable C:/projects/B23020317/music_system_top_isim_beh.exe
+Fuse Memory Usage: 27508 KB
+Fuse CPU Usage: 671 ms

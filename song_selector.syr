@@ -1,0 +1,391 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.61 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.63 secs
+ 
+--> Reading design: song_selector.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "song_selector.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "song_selector"
+Output Format                      : NGC
+Target Device                      : xc3s50an-5-tqg144
+
+---- Source Options
+Top Module Name                    : song_selector
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "song_selector.v" in library work
+Module <song_selector> compiled
+No errors in compilation
+Analysis of file <"song_selector.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <song_selector> in library <work> with parameters.
+	IDLE_ADDR = "00000000"
+	SONG1_ADDR = "00000000"
+	SONG2_ADDR = "00011110"
+	SONG3_ADDR = "00111100"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <song_selector>.
+	IDLE_ADDR = 8'b00000000
+	SONG1_ADDR = 8'b00000000
+	SONG2_ADDR = 8'b00011110
+	SONG3_ADDR = 8'b00111100
+Module <song_selector> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <song_selector>.
+    Related source file is "song_selector.v".
+    Found 4x11-bit ROM for signal <song_out$rom0000>.
+    Found 1-bit register for signal <led1>.
+    Found 1-bit register for signal <led2>.
+    Found 1-bit register for signal <led3>.
+    Found 8-bit register for signal <song_addr>.
+    Found 2-bit register for signal <song_out>.
+    Found 1-bit register for signal <key1_prev>.
+    Found 1-bit register for signal <song_end_prev>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  15 D-type flip-flop(s).
+Unit <song_selector> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 4x11-bit ROM                                          : 1
+# Registers                                            : 7
+ 1-bit register                                        : 5
+ 2-bit register                                        : 1
+ 8-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 4x11-bit ROM                                          : 1
+# Registers                                            : 15
+ Flip-Flops                                            : 15
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <song_addr_0> (without init value) has a constant value of 0 in block <song_selector>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <song_addr_6> (without init value) has a constant value of 0 in block <song_selector>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <song_addr_7> (without init value) has a constant value of 0 in block <song_selector>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <song_addr_2> in Unit <song_selector> is equivalent to the following 2 FFs/Latches, which will be removed : <song_addr_3> <song_addr_4> 
+
+Optimizing unit <song_selector> ...
+INFO:Xst:2261 - The FF/Latch <song_addr_1> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <led2> 
+INFO:Xst:2261 - The FF/Latch <song_addr_5> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <led3> 
+INFO:Xst:2261 - The FF/Latch <song_addr_1> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <led2> 
+INFO:Xst:2261 - The FF/Latch <song_addr_5> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <led3> 
+INFO:Xst:2261 - The FF/Latch <song_addr_1> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <led2> 
+INFO:Xst:2261 - The FF/Latch <song_addr_5> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <led3> 
+INFO:Xst:2261 - The FF/Latch <song_addr_1> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <led2> 
+INFO:Xst:2261 - The FF/Latch <song_addr_5> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <led3> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block song_selector, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : song_selector.ngr
+Top Level Output File Name         : song_selector
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 8
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 3
+#      LUT3                        : 1
+#      LUT4                        : 2
+# FlipFlops/Latches                : 8
+#      FDC                         : 5
+#      FDCE                        : 2
+#      FDP                         : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 3
+#      OBUF                        : 13
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50antqg144-5 
+
+ Number of Slices:                        4  out of    704     0%  
+ Number of Slice Flip Flops:              8  out of   1408     0%  
+ Number of 4 input LUTs:                  7  out of   1408     0%  
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of    108    15%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 8     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst_n_inv(rst_n_inv1_INV_0:O)      | NONE(key1_prev)        | 8     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 2.045ns (Maximum Frequency: 488.926MHz)
+   Minimum input arrival time before clock: 2.528ns
+   Maximum output required time after clock: 5.460ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.045ns (frequency: 488.926MHz)
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Delay:               2.045ns (Levels of Logic = 1)
+  Source:            song_end_prev (FF)
+  Destination:       song_out_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: song_end_prev to song_out_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.495   0.453  song_end_prev (song_end_prev)
+     LUT4:I3->O            2   0.561   0.380  song_out_not00011 (song_out_not0001)
+     FDCE:CE                   0.156          song_out_0
+    ----------------------------------------
+    Total                      2.045ns (1.212ns logic, 0.833ns route)
+                                       (59.3% logic, 40.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 8 / 6
+-------------------------------------------------------------------------
+Offset:              2.528ns (Levels of Logic = 2)
+  Source:            song_end (PAD)
+  Destination:       song_out_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: song_end to song_out_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.824   0.607  song_end_IBUF (song_end_IBUF)
+     LUT4:I0->O            2   0.561   0.380  song_out_not00011 (song_out_not0001)
+     FDCE:CE                   0.156          song_out_0
+    ----------------------------------------
+    Total                      2.528ns (1.541ns logic, 0.987ns route)
+                                       (61.0% logic, 39.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              5.460ns (Levels of Logic = 1)
+  Source:            song_out_1 (FF)
+  Destination:       song_out<1> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: song_out_1 to song_out<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             6   0.495   0.569  song_out_1 (song_out_1)
+     OBUF:I->O                 4.396          song_out_1_OBUF (song_out<1>)
+    ----------------------------------------
+    Total                      5.460ns (4.891ns logic, 0.569ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.55 secs
+ 
+--> 
+
+Total memory usage is 327004 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
+

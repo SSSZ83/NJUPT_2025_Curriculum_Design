@@ -1,0 +1,28 @@
+Command line:
+   song_selector_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49606
+
+Wed Nov 05 08:17:04 2025
+
+
+ Elaboration Time: 0.109375 sec
+
+ Current Memory Usage: 730.137 Meg
+
+ Total Signals          : 18
+ Total Nets             : 30
+ Total Signal Drivers   : 11
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 15
+ Total Traceable Variables  : 32
+ Total Scalar Nets and Variables : 157
+
+ Total Simulation Time: 0.296875 sec
+
+ Current Memory Usage: 730.137 Meg
+
+Wed Nov 05 08:17:11 2025
+
