@@ -1,17 +1,19 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Nov 06 11:17:05 2025
+// Written by: Map P.20131013 on Mon Nov 10 09:47:19 2025
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "led1" LOCATE = SITE "P12" LEVEL 1;
+COMP "led1" LOCATE = SITE "P15" LEVEL 1;
 COMP "led2" LOCATE = SITE "P13" LEVEL 1;
-COMP "led3" LOCATE = SITE "P15" LEVEL 1;
-COMP "clk_535k" LOCATE = SITE "P125" LEVEL 1;
-COMP "matrix_row0" LOCATE = SITE "P138" LEVEL 1;
+COMP "led3" LOCATE = SITE "P12" LEVEL 1;
 COMP "speaker" LOCATE = SITE "P3" LEVEL 1;
 COMP "end_flag" LOCATE = SITE "P10" LEVEL 1;
 COMP "clk_1k" LOCATE = SITE "P124" LEVEL 1;
+COMP "clk_2m" LOCATE = SITE "P125" LEVEL 1;
+COMP "music_on" LOCATE = SITE "P76" LEVEL 1;
 COMP "matrix_col0" LOCATE = SITE "P139" LEVEL 1;
 COMP "matrix_col1" LOCATE = SITE "P135" LEVEL 1;
+COMP "matrix_col2" LOCATE = SITE "P132" LEVEL 1;
+COMP "matrix_row0" LOCATE = SITE "P138" LEVEL 1;
 SCHEMATIC END;
 

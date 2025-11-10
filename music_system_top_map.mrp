@@ -9,36 +9,36 @@ Target Device  : xc3s50an
 Target Package : tqg144
 Target Speed   : -5
 Mapper Version : spartan3a -- $Revision: 1.55 $
-Mapped Date    : Thu Nov 06 11:17:03 2025
+Mapped Date    : Mon Nov 10 09:47:16 2025
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    1
+Number of warnings:    4
 Logic Utilization:
-  Number of Slice Flip Flops:            71 out of   1,408    5%
-  Number of 4 input LUTs:               247 out of   1,408   17%
+  Number of Slice Flip Flops:           102 out of   1,408    7%
+  Number of 4 input LUTs:               472 out of   1,408   33%
 Logic Distribution:
-  Number of occupied Slices:            145 out of     704   20%
-    Number of Slices containing only related logic:     145 out of     145 100%
-    Number of Slices containing unrelated logic:          0 out of     145   0%
+  Number of occupied Slices:            269 out of     704   38%
+    Number of Slices containing only related logic:     269 out of     269 100%
+    Number of Slices containing unrelated logic:          0 out of     269   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         259 out of   1,408   18%
-    Number used as logic:               245
-    Number used as a route-thru:         12
-    Number used as Shift registers:       2
+  Total Number of 4 input LUTs:         487 out of   1,408   34%
+    Number used as logic:               469
+    Number used as a route-thru:         15
+    Number used as Shift registers:       3
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                 10 out of     108    9%
-  Number of BUFGMUXs:                     2 out of      24    8%
+  Number of bonded IOBs:                 12 out of     108   11%
+  Number of BUFGMUXs:                     3 out of      24   12%
 
-Average Fanout of Non-Clock Nets:                3.77
+Average Fanout of Non-Clock Nets:                4.25
 
 Peak Memory Usage:  336 MB
 Total REAL time to MAP completion:  3 secs 
-Total CPU time to MAP completion:   2 secs 
+Total CPU time to MAP completion:   3 secs 
 
 NOTES:
 
@@ -83,6 +83,18 @@ WARNING:Pack:249 - The following adjacent carry multiplexers occupy different
    slice components.  The resulting carry chain will have suboptimal timing.
    	u_music_player/clk_gen_8hz/Mcompar_cnt_cmp_ge0000_cy<8>
    	u_music_player/clk_gen_8hz/Mcount_cnt_cy<0>
+WARNING:Pack:266 - The function generator u_music_player/rom/Mrom_data1881_7
+   failed to merge with F5 multiplexer u_music_player/rom/Mrom_data1881_6_f5. 
+   There is a conflict for the FXMUX.  The design will exhibit suboptimal
+   timing.
+WARNING:Pack:266 - The function generator u_music_player/rom/Mrom_data1121_124
+   failed to merge with F5 multiplexer u_music_player/rom/Mrom_data301_9_f5. 
+   There is a conflict for the FXMUX.  The design will exhibit suboptimal
+   timing.
+WARNING:Pack:266 - The function generator u_music_player/rom/Mrom_data821_6
+   failed to merge with F5 multiplexer u_music_player/rom/Mrom_data601_7_f5. 
+   There is a conflict for the GYMUX.  The design will exhibit suboptimal
+   timing.
 
 Section 3 - Informational
 -------------------------
@@ -94,7 +106,7 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 Section 4 - Removed Logic Summary
 ---------------------------------
    1 block(s) removed
-   4 block(s) optimized away
+   5 block(s) optimized away
 
 Section 5 - Removed Logic
 -------------------------
@@ -116,14 +128,16 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      | Term  | Strength | Rate    |              |          | Delay    |                  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | clk_1k                             | IBUF             | INPUT     | LVCMOS33             |       |          |         |              |          | 0 / 0    |                  |
-| clk_535k                           | IBUF             | INPUT     | LVCMOS33             |       |          |         |              |          | 0 / 0    |                  |
+| clk_2m                             | IBUF             | INPUT     | LVCMOS33             |       |          |         |              |          | 0 / 0    |                  |
 | end_flag                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | led1                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | led2                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | led3                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | matrix_col0                        | IBUF             | INPUT     | LVCMOS33             |       |          |         |              | PULLUP   | 0 / 0    |                  |
 | matrix_col1                        | IBUF             | INPUT     | LVCMOS33             |       |          |         |              | PULLUP   | 0 / 0    |                  |
+| matrix_col2                        | IBUF             | INPUT     | LVCMOS33             |       |          |         |              | PULLUP   | 0 / 0    |                  |
 | matrix_row0                        | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| music_on                           | IBUF             | INPUT     | LVCMOS33             |       |          |         |              |          | 0 / 0    |                  |
 | speaker                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 

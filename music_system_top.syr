@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Reading design: music_system_top.prj
 
@@ -105,8 +105,10 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling verilog file "scale_divider.v" in library work
-Compiling verilog file "octave_divider.v" in library work
+Compiling verilog file "pwm_duty_control.v" in library work
 Module <scale_divider> compiled
+Compiling verilog file "octave_divider.v" in library work
+Module <pwm_duty_control> compiled
 Compiling verilog file "music_rom.v" in library work
 Module <octave_divider> compiled
 Compiling verilog file "clk_div_8hz.v" in library work
@@ -119,8 +121,10 @@ Compiling verilog file "music_player.v" in library work
 Module <song_selector> compiled
 Compiling verilog file "matrix_key_control.v" in library work
 Module <music_player> compiled
-Compiling verilog file "music_system_top.v" in library work
+Compiling verilog file "clk_gen.v" in library work
 Module <matrix_key_control> compiled
+Compiling verilog file "music_system_top.v" in library work
+Module <clk_gen> compiled
 Module <music_system_top> compiled
 No errors in compilation
 Analysis of file <"music_system_top.prj"> succeeded.
@@ -131,8 +135,16 @@ Analysis of file <"music_system_top.prj"> succeeded.
 =========================================================================
 Analyzing hierarchy for module <music_system_top> in library <work>.
 
+Analyzing hierarchy for module <clk_gen> in library <work> with parameters.
+	DEST_DIV = "00000000000000000000000000000100"
+	DEST_NUM = "00000000000000000000000001100100"
+	DIFF_ACC = "00000000000000000000000001001001"
+	SOURCE_DIV = "00000000000000000000000000000011"
+	SOURCE_NUM = "00000000000000000000000101110101"
+
 Analyzing hierarchy for module <matrix_key_control> in library <work> with parameters.
 	DEBOUNCE_CNT = "1010"
+	DEFAULT_VOL = "100"
 
 Analyzing hierarchy for module <song_selector> in library <work> with parameters.
 	IDLE = "00"
@@ -141,7 +153,7 @@ Analyzing hierarchy for module <song_selector> in library <work> with parameters
 	SONG2 = "10"
 	SONG2_ADDR = "0100001011"
 	SONG3 = "11"
-	SONG3_ADDR = "0000110010"
+	SONG3_ADDR = "1000011011"
 
 Analyzing hierarchy for module <music_player> in library <work> with parameters.
 	END_MARK = "11111111"
@@ -159,6 +171,16 @@ Analyzing hierarchy for module <scale_divider> in library <work>.
 
 Analyzing hierarchy for module <octave_divider> in library <work>.
 
+Analyzing hierarchy for module <pwm_duty_control> in library <work> with parameters.
+	DUTY_0 = "0000"
+	DUTY_1 = "0001"
+	DUTY_2 = "0010"
+	DUTY_3 = "0011"
+	DUTY_4 = "0100"
+	DUTY_5 = "0101"
+	DUTY_6 = "0110"
+	DUTY_7 = "0111"
+
 
 =========================================================================
 *                            HDL Analysis                               *
@@ -166,8 +188,17 @@ Analyzing hierarchy for module <octave_divider> in library <work>.
 Analyzing top module <music_system_top>.
 Module <music_system_top> is correct for synthesis.
  
+Analyzing module <clk_gen> in library <work>.
+	DEST_DIV = 32'sb00000000000000000000000000000100
+	DEST_NUM = 32'sb00000000000000000000000001100100
+	DIFF_ACC = 32'sb00000000000000000000000001001001
+	SOURCE_DIV = 32'sb00000000000000000000000000000011
+	SOURCE_NUM = 32'sb00000000000000000000000101110101
+Module <clk_gen> is correct for synthesis.
+ 
 Analyzing module <matrix_key_control> in library <work>.
 	DEBOUNCE_CNT = 4'b1010
+	DEFAULT_VOL = 3'b100
 Module <matrix_key_control> is correct for synthesis.
  
 Analyzing module <song_selector> in library <work>.
@@ -177,7 +208,7 @@ Analyzing module <song_selector> in library <work>.
 	SONG2 = 2'b10
 	SONG2_ADDR = 10'b0100001011
 	SONG3 = 2'b11
-	SONG3_ADDR = 10'b0000110010
+	SONG3_ADDR = 10'b1000011011
 Module <song_selector> is correct for synthesis.
  
 Analyzing module <music_player> in library <work>.
@@ -204,6 +235,17 @@ Module <scale_divider> is correct for synthesis.
 Analyzing module <octave_divider> in library <work>.
 Module <octave_divider> is correct for synthesis.
  
+Analyzing module <pwm_duty_control> in library <work>.
+	DUTY_0 = 4'b0000
+	DUTY_1 = 4'b0001
+	DUTY_2 = 4'b0010
+	DUTY_3 = 4'b0011
+	DUTY_4 = 4'b0100
+	DUTY_5 = 4'b0101
+	DUTY_6 = 4'b0110
+	DUTY_7 = 4'b0111
+Module <pwm_duty_control> is correct for synthesis.
+ 
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -211,32 +253,59 @@ Module <octave_divider> is correct for synthesis.
 
 Performing bidirectional port resolution...
 
+Synthesizing Unit <clk_gen>.
+    Related source file is "clk_gen.v".
+    Found 1-bit register for signal <clk_frac_r>.
+    Found 4-bit register for signal <cnt_end_r>.
+    Found 8-bit comparator greatequal for signal <cnt_end_r$cmp_ge0000> created at line 76.
+    Found 8-bit adder for signal <diff_cnt>.
+    Found 8-bit subtractor for signal <diff_cnt$addsub0000> created at line 58.
+    Found 8-bit comparator greatequal for signal <diff_cnt$cmp_ge0000> created at line 58.
+    Found 4-bit comparator equal for signal <diff_cnt_en>.
+    Found 8-bit register for signal <diff_cnt_r>.
+    Found 4-bit up counter for signal <main_cnt>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   9 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+Unit <clk_gen> synthesized.
+
+
 Synthesizing Unit <matrix_key_control>.
     Related source file is "matrix_key_control.v".
     Found 1-bit register for signal <key1>.
     Found 1-bit register for signal <sys_rst_n>.
+    Found 3-bit up counter for signal <volume_level>.
     Found 1-bit register for signal <row0>.
     Found 1-bit register for signal <col0_1>.
     Found 1-bit register for signal <col0_2>.
     Found 1-bit register for signal <col1_1>.
     Found 1-bit register for signal <col1_2>.
-    Found 4-bit comparator less for signal <key1$cmp_lt0000> created at line 76.
+    Found 1-bit register for signal <col2_1>.
+    Found 1-bit register for signal <col2_2>.
+    Found 4-bit comparator less for signal <key1$cmp_lt0000> created at line 84.
     Found 4-bit up counter for signal <key1_cnt>.
-    Found 4-bit comparator greatequal for signal <key1_cnt$cmp_ge0000> created at line 76.
+    Found 4-bit comparator greatequal for signal <key1_cnt$cmp_ge0000> created at line 84.
     Found 4-bit up counter for signal <rst_cnt>.
-    Found 4-bit comparator greatequal for signal <rst_cnt$cmp_ge0000> created at line 102.
-    Found 4-bit comparator less for signal <sys_rst_n$cmp_lt0000> created at line 102.
+    Found 4-bit comparator greatequal for signal <rst_cnt$cmp_ge0000> created at line 110.
+    Found 4-bit comparator less for signal <sys_rst_n$cmp_lt0000> created at line 110.
+    Found 4-bit up counter for signal <vol_cnt>.
+    Found 4-bit comparator greatequal for signal <vol_cnt$cmp_ge0000> created at line 133.
+    Found 1-bit register for signal <vol_press>.
+    Found 4-bit comparator less for signal <vol_press$cmp_lt0000> created at line 134.
+    Found 1-bit register for signal <vol_press_prev>.
     Summary:
-	inferred   2 Counter(s).
-	inferred   7 D-type flip-flop(s).
-	inferred   4 Comparator(s).
+	inferred   4 Counter(s).
+	inferred  11 D-type flip-flop(s).
+	inferred   6 Comparator(s).
 Unit <matrix_key_control> synthesized.
 
 
 Synthesizing Unit <song_selector>.
     Related source file is "song_selector.v".
 WARNING:Xst:647 - Input <end_flag> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:2117 - HDL ADVISOR - Mux Selector <song_state> of Case statement line 79 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <song_state> of Case statement line 78 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
    	- add an 'INIT' attribute on signal <song_state> (optimization is then done without any risk)
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
@@ -245,7 +314,7 @@ INFO:Xst:2117 - HDL ADVISOR - Mux Selector <song_state> of Case statement line 7
     | States             | 4                                              |
     | Transitions        | 4                                              |
     | Inputs             | 0                                              |
-    | Outputs            | 9                                              |
+    | Outputs            | 10                                             |
     | Clock              | clk                       (rising_edge)        |
     | Clock enable       | key1_fall                 (positive)           |
     | Reset              | rst_n                     (negative)           |
@@ -279,10 +348,9 @@ Unit <clk_div_8hz> synthesized.
 
 Synthesizing Unit <addr_control>.
     Related source file is "addr_control.v".
-WARNING:Xst:646 - Signal <load_trig_prev> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 10-bit register for signal <addr>.
     Found 1-bit register for signal <end_flag>.
-    Found 10-bit adder for signal <addr$addsub0000> created at line 49.
+    Found 10-bit adder for signal <addr$addsub0000> created at line 52.
     Summary:
 	inferred  11 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
@@ -291,7 +359,7 @@ Unit <addr_control> synthesized.
 
 Synthesizing Unit <music_rom>.
     Related source file is "music_rom.v".
-    Found 512x8-bit ROM for signal <data$mux0000>.
+    Found 1024x8-bit ROM for signal <data>.
     Summary:
 	inferred   1 ROM(s).
 Unit <music_rom> synthesized.
@@ -333,6 +401,22 @@ WARNING:Xst:646 - Signal <div_val<0>> is assigned but never used. This unconnect
 Unit <octave_divider> synthesized.
 
 
+Synthesizing Unit <pwm_duty_control>.
+    Related source file is "pwm_duty_control.v".
+    Found 8x4-bit ROM for signal <duty_cnt_max>.
+    Found 1-bit register for signal <pwm_out>.
+    Found 4-bit up counter for signal <duty_cnt>.
+    Found 4-bit comparator less for signal <duty_cnt$cmp_lt0000> created at line 81.
+    Found 4-bit comparator greater for signal <pwm_out$cmp_gt0000> created at line 78.
+    Found 1-bit register for signal <pwm_raw_prev>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <pwm_duty_control> synthesized.
+
+
 Synthesizing Unit <music_player>.
     Related source file is "music_player.v".
 Unit <music_player> synthesized.
@@ -342,34 +426,44 @@ Synthesizing Unit <music_system_top>.
     Related source file is "music_system_top.v".
 Unit <music_system_top> synthesized.
 
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 3
+# ROMs                                                 : 4
+ 1024x8-bit ROM                                        : 1
  12x16-bit ROM                                         : 1
  4x5-bit ROM                                           : 1
- 512x8-bit ROM                                         : 1
-# Adders/Subtractors                                   : 3
+ 8x4-bit ROM                                           : 1
+# Adders/Subtractors                                   : 5
  10-bit adder                                          : 1
  18-bit subtractor                                     : 1
  7-bit subtractor                                      : 1
-# Counters                                             : 5
+ 8-bit adder                                           : 1
+ 8-bit subtractor                                      : 1
+# Counters                                             : 9
  16-bit up counter                                     : 1
  17-bit up counter                                     : 1
- 4-bit up counter                                      : 2
+ 3-bit up counter                                      : 1
+ 4-bit up counter                                      : 5
  5-bit up counter                                      : 1
-# Registers                                            : 17
- 1-bit register                                        : 15
+# Registers                                            : 26
+ 1-bit register                                        : 22
  10-bit register                                       : 2
-# Comparators                                          : 8
+ 4-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 15
  17-bit comparator greatequal                          : 1
  18-bit comparator greatequal                          : 1
- 4-bit comparator greatequal                           : 2
- 4-bit comparator less                                 : 2
+ 4-bit comparator equal                                : 1
+ 4-bit comparator greatequal                           : 3
+ 4-bit comparator greater                              : 1
+ 4-bit comparator less                                 : 4
  4-bit comparator lessequal                            : 1
  7-bit comparator greatequal                           : 1
+ 8-bit comparator greatequal                           : 2
 
 =========================================================================
 
@@ -378,50 +472,60 @@ Macro Statistics
 =========================================================================
 
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <u_song_selector/song_state/FSM> on signal <song_state[1:2]> with gray encoding.
+Optimizing FSM <u_song_selector/song_state/FSM> on signal <song_state[1:4]> with one-hot encoding.
 -------------------
  State | Encoding
 -------------------
- 00    | 00
- 01    | 01
- 10    | 11
- 11    | 10
+ 00    | 0001
+ 01    | 0010
+ 10    | 0100
+ 11    | 1000
 -------------------
-INFO:Xst:2261 - The FF/Latch <start_addr_3> in Unit <u_song_selector> is equivalent to the following 2 FFs/Latches, which will be removed : <start_addr_8> <led2> 
-INFO:Xst:2261 - The FF/Latch <led3> in Unit <u_song_selector> is equivalent to the following 2 FFs/Latches, which will be removed : <start_addr_4> <start_addr_5> 
+INFO:Xst:2261 - The FF/Latch <start_addr_8> in Unit <u_song_selector> is equivalent to the following FF/Latch, which will be removed : <led2> 
+INFO:Xst:2261 - The FF/Latch <led3> in Unit <u_song_selector> is equivalent to the following 2 FFs/Latches, which will be removed : <start_addr_4> <start_addr_9> 
+WARNING:Xst:1710 - FF/Latch <1> (without init value) has a constant value of 1 in block <cnt_end_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <cnt_end_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <3> (without init value) has a constant value of 0 in block <cnt_end_r>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <row0> (without init value) has a constant value of 0 in block <u_matrix_key>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <start_addr_2> (without init value) has a constant value of 0 in block <u_song_selector>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <start_addr_5> (without init value) has a constant value of 0 in block <u_song_selector>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <start_addr_6> (without init value) has a constant value of 0 in block <u_song_selector>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <start_addr_7> (without init value) has a constant value of 0 in block <u_song_selector>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <start_addr_9> (without init value) has a constant value of 0 in block <u_song_selector>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
 # FSMs                                                 : 1
-# ROMs                                                 : 3
+# ROMs                                                 : 4
+ 1024x8-bit ROM                                        : 1
  12x16-bit ROM                                         : 1
  4x5-bit ROM                                           : 1
- 512x8-bit ROM                                         : 1
-# Adders/Subtractors                                   : 3
+ 8x4-bit ROM                                           : 1
+# Adders/Subtractors                                   : 5
  10-bit adder                                          : 1
  18-bit subtractor                                     : 1
  7-bit subtractor                                      : 1
-# Counters                                             : 5
+ 8-bit adder                                           : 1
+ 8-bit subtractor                                      : 1
+# Counters                                             : 9
  16-bit up counter                                     : 1
  17-bit up counter                                     : 1
- 4-bit up counter                                      : 2
+ 3-bit up counter                                      : 1
+ 4-bit up counter                                      : 5
  5-bit up counter                                      : 1
-# Registers                                            : 35
- Flip-Flops                                            : 35
-# Comparators                                          : 8
+# Registers                                            : 54
+ Flip-Flops                                            : 54
+# Comparators                                          : 15
  17-bit comparator greatequal                          : 1
  18-bit comparator greatequal                          : 1
- 4-bit comparator greatequal                           : 2
- 4-bit comparator less                                 : 2
+ 4-bit comparator equal                                : 1
+ 4-bit comparator greatequal                           : 3
+ 4-bit comparator greater                              : 1
+ 4-bit comparator less                                 : 4
  4-bit comparator lessequal                            : 1
  7-bit comparator greatequal                           : 1
+ 8-bit comparator greatequal                           : 2
 
 =========================================================================
 
@@ -429,12 +533,17 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 WARNING:Xst:1710 - FF/Latch <row0> (without init value) has a constant value of 0 in block <matrix_key_control>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <start_addr_3> in Unit <song_selector> is equivalent to the following 2 FFs/Latches, which will be removed : <start_addr_8> <led2> 
-INFO:Xst:2261 - The FF/Latch <start_addr_4> in Unit <song_selector> is equivalent to the following 2 FFs/Latches, which will be removed : <start_addr_5> <led3> 
-INFO:Xst:2261 - The FF/Latch <start_addr_2> in Unit <song_selector> is equivalent to the following 3 FFs/Latches, which will be removed : <start_addr_6> <start_addr_7> <start_addr_9> 
-INFO:Xst:2261 - The FF/Latch <start_addr_1> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <song_state_FSM_FFd1> 
-INFO:Xst:2261 - The FF/Latch <start_addr_0> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <song_state_FSM_FFd2> 
+INFO:Xst:2261 - The FF/Latch <start_addr_8> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <led2> 
+INFO:Xst:2261 - The FF/Latch <start_addr_4> in Unit <song_selector> is equivalent to the following 2 FFs/Latches, which will be removed : <start_addr_9> <led3> 
+INFO:Xst:2261 - The FF/Latch <led1> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <song_state_FSM_FFd3> 
+INFO:Xst:2261 - The FF/Latch <start_addr_8> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <song_state_FSM_FFd2> 
+INFO:Xst:2261 - The FF/Latch <start_addr_4> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <song_state_FSM_FFd1> 
+INFO:Xst:2261 - The FF/Latch <start_addr_2> in Unit <song_selector> is equivalent to the following 3 FFs/Latches, which will be removed : <start_addr_5> <start_addr_6> <start_addr_7> 
+INFO:Xst:2261 - The FF/Latch <start_addr_1> in Unit <song_selector> is equivalent to the following FF/Latch, which will be removed : <start_addr_3> 
+INFO:Xst:2261 - The FF/Latch <cnt_end_r_3> in Unit <clk_gen> is equivalent to the following FF/Latch, which will be removed : <cnt_end_r_2> 
 WARNING:Xst:1710 - FF/Latch <start_addr_2> (without init value) has a constant value of 0 in block <song_selector>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cnt_end_r_3> (without init value) has a constant value of 0 in block <clk_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cnt_end_r_1> (without init value) has a constant value of 1 in block <clk_gen>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <music_system_top> ...
 
@@ -444,20 +553,23 @@ Optimizing unit <song_selector> ...
 
 Optimizing unit <addr_control> ...
 
-Optimizing unit <music_rom> ...
-
 Optimizing unit <scale_divider> ...
+
+Optimizing unit <pwm_duty_control> ...
+
+Optimizing unit <clk_gen> ...
 
 Optimizing unit <music_player> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block music_system_top, actual ratio is 21.
-FlipFlop u_music_player/addr_ctrl/addr_1 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 5) on block music_system_top, actual ratio is 40.
+FlipFlop u_music_player/addr_ctrl/addr_0 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
 Processing Unit <music_system_top> :
+	Found 2-bit shift register for signal <u_matrix_key/col2_2>.
 	Found 2-bit shift register for signal <u_matrix_key/col1_2>.
 	Found 2-bit shift register for signal <u_matrix_key/col0_2>.
 Unit <music_system_top> processed.
@@ -466,10 +578,10 @@ Unit <music_system_top> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 69
- Flip-Flops                                            : 69
-# Shift Registers                                      : 2
- 2-bit shift register                                  : 2
+# Registers                                            : 99
+ Flip-Flops                                            : 99
+# Shift Registers                                      : 3
+ 2-bit shift register                                  : 3
 
 =========================================================================
 
@@ -495,42 +607,45 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 10
+# IOs                              : 12
 
 Cell Usage :
-# BELS                             : 414
+# BELS                             : 720
 #      GND                         : 1
-#      INV                         : 24
+#      INV                         : 27
 #      LUT1                        : 12
-#      LUT2                        : 22
-#      LUT2_D                      : 1
-#      LUT2_L                      : 4
-#      LUT3                        : 70
-#      LUT3_D                      : 1
-#      LUT3_L                      : 3
-#      LUT4                        : 109
-#      LUT4_D                      : 1
-#      LUT4_L                      : 18
+#      LUT2                        : 34
+#      LUT2_D                      : 2
+#      LUT2_L                      : 1
+#      LUT3                        : 134
+#      LUT3_D                      : 2
+#      LUT3_L                      : 4
+#      LUT4                        : 254
+#      LUT4_D                      : 5
+#      LUT4_L                      : 12
 #      MUXCY                       : 71
-#      MUXF5                       : 26
-#      MUXF6                       : 5
-#      MUXF7                       : 2
+#      MUXF5                       : 89
+#      MUXF6                       : 21
+#      MUXF7                       : 7
 #      VCC                         : 1
 #      XORCY                       : 43
-# FlipFlops/Latches                : 71
-#      FD                          : 2
-#      FDC                         : 39
-#      FDCE                        : 19
+# FlipFlops/Latches                : 102
+#      FD                          : 4
+#      FDC                         : 47
+#      FDCE                        : 31
 #      FDP                         : 1
-#      FDR                         : 4
-#      FDRS                        : 4
+#      FDPE                        : 1
+#      FDR                         : 7
+#      FDRE                        : 3
+#      FDRS                        : 6
 #      FDS                         : 2
-# Shift Registers                  : 2
-#      SRL16                       : 2
-# Clock Buffers                    : 2
+# Shift Registers                  : 3
+#      SRL16                       : 3
+# Clock Buffers                    : 3
+#      BUFG                        : 1
 #      BUFGP                       : 2
-# IO Buffers                       : 8
-#      IBUF                        : 2
+# IO Buffers                       : 10
+#      IBUF                        : 4
 #      OBUF                        : 6
 =========================================================================
 
@@ -539,14 +654,14 @@ Device utilization summary:
 
 Selected Device : 3s50antqg144-5 
 
- Number of Slices:                      137  out of    704    19%  
- Number of Slice Flip Flops:             71  out of   1408     5%  
- Number of 4 input LUTs:                267  out of   1408    18%  
-    Number used as logic:               265
-    Number used as Shift registers:       2
- Number of IOs:                          10
- Number of bonded IOBs:                  10  out of    108     9%  
- Number of GCLKs:                         2  out of     24     8%  
+ Number of Slices:                      258  out of    704    36%  
+ Number of Slice Flip Flops:            102  out of   1408     7%  
+ Number of 4 input LUTs:                490  out of   1408    34%  
+    Number used as logic:               487
+    Number used as Shift registers:       3
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    108    11%  
+ Number of GCLKs:                         3  out of     24    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -569,8 +684,9 @@ Clock Information:
 -----------------------------------+--------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                | Load  |
 -----------------------------------+--------------------------------------+-------+
-clk_1k                             | BUFGP                                | 20    |
-clk_535k                           | BUFGP                                | 35    |
+clk_1k                             | BUFGP                                | 32    |
+clk_2m                             | BUFGP                                | 14    |
+u_clk_gen/clk_frac_r1              | BUFG                                 | 41    |
 u_music_player/clk_gen_8hz/clk_out | NONE(u_music_player/addr_ctrl/addr_0)| 12    |
 u_music_player/scale_div/scale_out | NONE(u_music_player/octave_div/cnt_4)| 6     |
 -----------------------------------+--------------------------------------+-------+
@@ -578,20 +694,20 @@ INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-----------------------------------------------------------------------+--------------------------------------+-------+
-Control Signal                                                        | Buffer(FF name)                      | Load  |
-----------------------------------------------------------------------+--------------------------------------+-------+
-u_music_player/addr_ctrl/rst_n_inv(u_song_selector/rst_n_inv1_INV_0:O)| NONE(u_music_player/addr_ctrl/addr_0)| 59    |
-----------------------------------------------------------------------+--------------------------------------+-------+
+----------------------------------------------------------------+---------------------------+-------+
+Control Signal                                                  | Buffer(FF name)           | Load  |
+----------------------------------------------------------------+---------------------------+-------+
+u_clk_gen/cnt_end_r_Acst_inv(u_song_selector/rst_n_inv1_INV_0:O)| NONE(u_clk_gen/clk_frac_r)| 80    |
+----------------------------------------------------------------+---------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 8.433ns (Maximum Frequency: 118.588MHz)
-   Minimum input arrival time before clock: 1.181ns
-   Maximum output required time after clock: 13.006ns
-   Maximum combinational path delay: No path found
+   Minimum period: 9.820ns (Maximum Frequency: 101.830MHz)
+   Minimum input arrival time before clock: 4.049ns
+   Maximum output required time after clock: 14.466ns
+   Maximum combinational path delay: 7.730ns
 
 Timing Detail:
 --------------
@@ -600,34 +716,59 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_1k'
   Clock period: 3.247ns (frequency: 307.977MHz)
-  Total number of paths / destination ports: 85 / 35
+  Total number of paths / destination ports: 147 / 59
 -------------------------------------------------------------------------
 Delay:               3.247ns (Levels of Logic = 0)
-  Source:            u_matrix_key/Mshreg_col1_2 (FF)
-  Destination:       u_matrix_key/col1_2 (FF)
+  Source:            u_matrix_key/Mshreg_col0_2 (FF)
+  Destination:       u_matrix_key/col0_2 (FF)
   Source Clock:      clk_1k rising
   Destination Clock: clk_1k rising
 
-  Data Path: u_matrix_key/Mshreg_col1_2 to u_matrix_key/col1_2
+  Data Path: u_matrix_key/Mshreg_col0_2 to u_matrix_key/col0_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     SRL16:CLK->Q          1   3.050   0.000  u_matrix_key/Mshreg_col1_2 (u_matrix_key/Mshreg_col1_2)
-     FD:D                      0.197          u_matrix_key/col1_2
+     SRL16:CLK->Q          1   3.050   0.000  u_matrix_key/Mshreg_col0_2 (u_matrix_key/Mshreg_col0_2)
+     FD:D                      0.197          u_matrix_key/col0_2
     ----------------------------------------
     Total                      3.247ns (3.247ns logic, 0.000ns route)
                                        (100.0% logic, 0.0% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk_535k'
+Timing constraint: Default period analysis for Clock 'clk_2m'
+  Clock period: 5.274ns (frequency: 189.620MHz)
+  Total number of paths / destination ports: 211 / 22
+-------------------------------------------------------------------------
+Delay:               5.274ns (Levels of Logic = 4)
+  Source:            u_clk_gen/diff_cnt_r_2 (FF)
+  Destination:       u_clk_gen/diff_cnt_r_6 (FF)
+  Source Clock:      clk_2m rising
+  Destination Clock: clk_2m rising
+
+  Data Path: u_clk_gen/diff_cnt_r_2 to u_clk_gen/diff_cnt_r_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            11   0.495   0.816  u_clk_gen/diff_cnt_r_2 (u_clk_gen/diff_cnt_r_2)
+     LUT3:I2->O            6   0.561   0.592  u_clk_gen/Madd_diff_cnt_xor<5>131 (u_clk_gen/N8)
+     LUT4:I2->O            1   0.561   0.465  u_clk_gen/Madd_diff_cnt_xor<6>141 (u_clk_gen/Madd_diff_cnt_xor<6>141)
+     LUT4:I0->O            1   0.561   0.465  u_clk_gen/Madd_diff_cnt_xor<6>163 (u_clk_gen/Madd_diff_cnt_xor<6>163)
+     LUT3:I0->O            1   0.561   0.000  u_clk_gen/Madd_diff_cnt_xor<6>186 (u_clk_gen/diff_cnt<6>)
+     FDCE:D                    0.197          u_clk_gen/diff_cnt_r_6
+    ----------------------------------------
+    Total                      5.274ns (2.936ns logic, 2.338ns route)
+                                       (55.7% logic, 44.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'u_clk_gen/clk_frac_r1'
   Clock period: 6.903ns (frequency: 144.870MHz)
-  Total number of paths / destination ports: 7941 / 37
+  Total number of paths / destination ports: 7983 / 46
 -------------------------------------------------------------------------
 Delay:               6.903ns (Levels of Logic = 34)
   Source:            u_music_player/scale_div/cnt_0 (FF)
   Destination:       u_music_player/scale_div/cnt_15 (FF)
-  Source Clock:      clk_535k rising
-  Destination Clock: clk_535k rising
+  Source Clock:      u_clk_gen/clk_frac_r1 rising
+  Destination Clock: u_clk_gen/clk_frac_r1 rising
 
   Data Path: u_music_player/scale_div/cnt_0 to u_music_player/scale_div/cnt_15
                                 Gate     Net
@@ -675,39 +816,41 @@ Delay:               6.903ns (Levels of Logic = 34)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'u_music_player/clk_gen_8hz/clk_out'
-  Clock period: 8.433ns (frequency: 118.589MHz)
-  Total number of paths / destination ports: 4979 / 23
+  Clock period: 9.820ns (frequency: 101.830MHz)
+  Total number of paths / destination ports: 34034 / 23
 -------------------------------------------------------------------------
-Delay:               8.433ns (Levels of Logic = 8)
-  Source:            u_music_player/addr_ctrl/addr_3 (FF)
+Delay:               9.820ns (Levels of Logic = 10)
+  Source:            u_music_player/addr_ctrl/addr_2 (FF)
   Destination:       u_music_player/addr_ctrl/addr_0 (FF)
   Source Clock:      u_music_player/clk_gen_8hz/clk_out rising
   Destination Clock: u_music_player/clk_gen_8hz/clk_out rising
 
-  Data Path: u_music_player/addr_ctrl/addr_3 to u_music_player/addr_ctrl/addr_0
+  Data Path: u_music_player/addr_ctrl/addr_2 to u_music_player/addr_ctrl/addr_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            56   0.495   1.187  u_music_player/addr_ctrl/addr_3 (u_music_player/addr_ctrl/addr_3)
-     LUT3:I0->O            4   0.561   0.522  u_music_player/rom/Mrom_data_mux0000111 (u_music_player/rom/Mrom_data_mux00001)
-     LUT3:I2->O            1   0.561   0.000  u_music_player/rom/Mrom_data_mux0000481_11 (u_music_player/rom/Mrom_data_mux0000481_11)
-     MUXF5:I0->O           1   0.229   0.000  u_music_player/rom/Mrom_data_mux0000871_9_f5 (u_music_player/rom/Mrom_data_mux0000871_9_f5)
-     MUXF6:I0->O           1   0.239   0.380  u_music_player/rom/Mrom_data_mux0000871_7_f6 (u_music_player/rom/Mrom_data_mux0000871_7_f6)
-     LUT3:I2->O            1   0.561   0.423  u_music_player/rom/Mrom_data_mux0000871_4 (u_music_player/rom/Mrom_data_mux0000871_4)
-     LUT4:I1->O           19   0.562   0.922  u_music_player/rom/data<6>1 (u_music_player/rom_data<6>)
-     MUXF5:S->O            1   0.652   0.380  u_music_player/addr_ctrl/addr_cmp_eq000013_SW3 (N20)
-     LUT4:I2->O            1   0.561   0.000  u_music_player/addr_ctrl/addr_mux0000<8>1 (u_music_player/addr_ctrl/addr_mux0000<8>)
-     FDCE:D                    0.197          u_music_player/addr_ctrl/addr_8
+     FDCE:C->Q           124   0.495   1.164  u_music_player/addr_ctrl/addr_2 (u_music_player/addr_ctrl/addr_2)
+     LUT4_D:I1->O         11   0.562   0.816  u_music_player/rom/Mrom_data1451 (u_music_player/rom/Mrom_data145)
+     LUT3:I2->O            1   0.561   0.000  u_music_player/rom/Mrom_data1521_111 (u_music_player/rom/Mrom_data1521_111)
+     MUXF5:I0->O           1   0.229   0.000  u_music_player/rom/Mrom_data1521_9_f5_0 (u_music_player/rom/Mrom_data1521_9_f51)
+     MUXF6:I1->O           2   0.239   0.382  u_music_player/rom/Mrom_data1521_8_f6 (u_music_player/rom/Mrom_data1521_8_f6)
+     LUT4:I3->O            1   0.561   0.423  u_music_player/rom/Mrom_data1521_6_f7_SW0 (N123)
+     LUT3:I1->O            1   0.562   0.000  u_music_player/rom/Mrom_data1521_2_f5_G (N210)
+     MUXF5:I1->O          20   0.229   0.939  u_music_player/rom/Mrom_data1521_2_f5 (u_music_player/rom_data<5>1)
+     LUT4:I3->O            1   0.561   0.000  u_music_player/addr_ctrl/addr_cmp_eq000027_SW2_F (N183)
+     MUXF5:I0->O           1   0.229   0.359  u_music_player/addr_ctrl/addr_cmp_eq000027_SW2 (N80)
+     LUT4:I3->O           11   0.561   0.793  u_music_player/addr_ctrl/addr_not00011 (u_music_player/addr_ctrl/addr_not0001)
+     FDCE:CE                   0.156          u_music_player/addr_ctrl/addr_0
     ----------------------------------------
-    Total                      8.433ns (4.618ns logic, 3.815ns route)
-                                       (54.8% logic, 45.2% route)
+    Total                      9.820ns (4.945ns logic, 4.875ns route)
+                                       (50.4% logic, 49.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'u_music_player/scale_div/scale_out'
-  Clock period: 3.985ns (frequency: 250.960MHz)
+  Clock period: 3.944ns (frequency: 253.569MHz)
   Total number of paths / destination ports: 76 / 7
 -------------------------------------------------------------------------
-Delay:               3.985ns (Levels of Logic = 8)
+Delay:               3.944ns (Levels of Logic = 8)
   Source:            u_music_player/octave_div/cnt_0 (FF)
   Destination:       u_music_player/octave_div/cnt_4 (FF)
   Source Clock:      u_music_player/scale_div/scale_out rising
@@ -717,8 +860,8 @@ Delay:               3.985ns (Levels of Logic = 8)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              5   0.495   0.646  u_music_player/octave_div/cnt_0 (u_music_player/octave_div/cnt_0)
-     LUT3:I0->O            1   0.561   0.000  u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_lut<0> (u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_lut<0>)
+     FDC:C->Q              5   0.495   0.604  u_music_player/octave_div/cnt_0 (u_music_player/octave_div/cnt_0)
+     LUT3:I1->O            1   0.562   0.000  u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_lut<0> (u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_lut<0>)
      MUXCY:S->O            1   0.523   0.000  u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_cy<0> (u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_cy<0>)
      MUXCY:CI->O           1   0.065   0.000  u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_cy<1> (u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_cy<1>)
      MUXCY:CI->O           1   0.065   0.000  u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_cy<2> (u_music_player/octave_div/Mcompar_cnt_cmp_ge0000_cy<2>)
@@ -728,24 +871,46 @@ Delay:               3.985ns (Levels of Logic = 8)
      LUT2:I0->O            1   0.561   0.000  u_music_player/octave_div/Mcount_cnt_xor<0>11 (u_music_player/octave_div/Mcount_cnt)
      FDC:D                     0.197          u_music_player/octave_div/cnt_0
     ----------------------------------------
-    Total                      3.985ns (2.662ns logic, 1.323ns route)
-                                       (66.8% logic, 33.2% route)
+    Total                      3.944ns (2.663ns logic, 1.281ns route)
+                                       (67.5% logic, 32.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_1k'
-  Total number of paths / destination ports: 2 / 2
+Timing constraint: Default OFFSET IN BEFORE for Clock 'u_music_player/clk_gen_8hz/clk_out'
+  Total number of paths / destination ports: 33 / 11
 -------------------------------------------------------------------------
-Offset:              1.181ns (Levels of Logic = 1)
-  Source:            matrix_col1 (PAD)
-  Destination:       u_matrix_key/Mshreg_col1_2 (FF)
-  Destination Clock: clk_1k rising
+Offset:              4.049ns (Levels of Logic = 4)
+  Source:            music_on (PAD)
+  Destination:       u_music_player/addr_ctrl/addr_0 (FF)
+  Destination Clock: u_music_player/clk_gen_8hz/clk_out rising
 
-  Data Path: matrix_col1 to u_matrix_key/Mshreg_col1_2
+  Data Path: music_on to u_music_player/addr_ctrl/addr_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.824   0.357  matrix_col1_IBUF (matrix_col1_IBUF)
-     SRL16:D                  -0.092          u_matrix_key/Mshreg_col1_2
+     IBUF:I->O             4   0.824   0.565  music_on_IBUF (music_on_IBUF)
+     LUT4:I1->O            1   0.562   0.000  u_music_player/addr_ctrl/addr_cmp_eq000027_SW2_F (N183)
+     MUXF5:I0->O           1   0.229   0.359  u_music_player/addr_ctrl/addr_cmp_eq000027_SW2 (N80)
+     LUT4:I3->O           11   0.561   0.793  u_music_player/addr_ctrl/addr_not00011 (u_music_player/addr_ctrl/addr_not0001)
+     FDCE:CE                   0.156          u_music_player/addr_ctrl/addr_0
+    ----------------------------------------
+    Total                      4.049ns (2.332ns logic, 1.717ns route)
+                                       (57.6% logic, 42.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_1k'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              1.181ns (Levels of Logic = 1)
+  Source:            matrix_col0 (PAD)
+  Destination:       u_matrix_key/Mshreg_col0_2 (FF)
+  Destination Clock: clk_1k rising
+
+  Data Path: matrix_col0 to u_matrix_key/Mshreg_col0_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.824   0.357  matrix_col0_IBUF (matrix_col0_IBUF)
+     SRL16:D                  -0.092          u_matrix_key/Mshreg_col0_2
     ----------------------------------------
     Total                      1.181ns (0.824ns logic, 0.357ns route)
                                        (69.8% logic, 30.2% route)
@@ -754,80 +919,102 @@ Offset:              1.181ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_1k'
   Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
-Offset:              5.493ns (Levels of Logic = 1)
-  Source:            u_song_selector/start_addr_3 (FF)
-  Destination:       led2 (PAD)
+Offset:              5.588ns (Levels of Logic = 1)
+  Source:            u_song_selector/start_addr_4 (FF)
+  Destination:       led3 (PAD)
   Source Clock:      clk_1k rising
 
-  Data Path: u_song_selector/start_addr_3 to led2
+  Data Path: u_song_selector/start_addr_4 to led3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             7   0.495   0.602  u_song_selector/start_addr_3 (u_song_selector/start_addr_3)
-     OBUF:I->O                 4.396          led2_OBUF (led2)
+     FDCE:C->Q             9   0.495   0.697  u_song_selector/start_addr_4 (u_song_selector/start_addr_4)
+     OBUF:I->O                 4.396          led3_OBUF (led3)
     ----------------------------------------
-    Total                      5.493ns (4.891ns logic, 0.602ns route)
-                                       (89.0% logic, 11.0% route)
+    Total                      5.588ns (4.891ns logic, 0.697ns route)
+                                       (87.5% logic, 12.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'u_clk_gen/clk_frac_r1'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              7.300ns (Levels of Logic = 3)
+  Source:            u_music_player/u_pwm_duty/pwm_out (FF)
+  Destination:       speaker (PAD)
+  Source Clock:      u_clk_gen/clk_frac_r1 rising
+
+  Data Path: u_music_player/u_pwm_duty/pwm_out to speaker
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.495   0.465  u_music_player/u_pwm_duty/pwm_out (u_music_player/u_pwm_duty/pwm_out)
+     LUT3:I0->O            1   0.561   0.465  u_music_player/speaker68 (u_music_player/speaker68)
+     LUT4:I0->O            1   0.561   0.357  u_music_player/speaker71 (speaker_OBUF)
+     OBUF:I->O                 4.396          speaker_OBUF (speaker)
+    ----------------------------------------
+    Total                      7.300ns (6.013ns logic, 1.287ns route)
+                                       (82.4% logic, 17.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'u_music_player/clk_gen_8hz/clk_out'
-  Total number of paths / destination ports: 913 / 2
+  Total number of paths / destination ports: 2088 / 2
 -------------------------------------------------------------------------
-Offset:              13.006ns (Levels of Logic = 9)
-  Source:            u_music_player/addr_ctrl/addr_3 (FF)
+Offset:              14.466ns (Levels of Logic = 11)
+  Source:            u_music_player/addr_ctrl/addr_2 (FF)
   Destination:       speaker (PAD)
   Source Clock:      u_music_player/clk_gen_8hz/clk_out rising
 
-  Data Path: u_music_player/addr_ctrl/addr_3 to speaker
+  Data Path: u_music_player/addr_ctrl/addr_2 to speaker
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            56   0.495   1.187  u_music_player/addr_ctrl/addr_3 (u_music_player/addr_ctrl/addr_3)
-     LUT3:I0->O            4   0.561   0.522  u_music_player/rom/Mrom_data_mux0000111 (u_music_player/rom/Mrom_data_mux00001)
-     LUT3:I2->O            1   0.561   0.000  u_music_player/rom/Mrom_data_mux0000481_11 (u_music_player/rom/Mrom_data_mux0000481_11)
-     MUXF5:I0->O           1   0.229   0.000  u_music_player/rom/Mrom_data_mux0000871_9_f5 (u_music_player/rom/Mrom_data_mux0000871_9_f5)
-     MUXF6:I0->O           1   0.239   0.380  u_music_player/rom/Mrom_data_mux0000871_7_f6 (u_music_player/rom/Mrom_data_mux0000871_7_f6)
-     LUT3:I2->O            1   0.561   0.423  u_music_player/rom/Mrom_data_mux0000871_4 (u_music_player/rom/Mrom_data_mux0000871_4)
-     LUT4:I1->O           19   0.562   1.030  u_music_player/rom/data<6>1 (u_music_player/rom_data<6>)
-     LUT4:I0->O            1   0.561   0.380  u_music_player/speaker33 (u_music_player/speaker33)
-     LUT4:I2->O            1   0.561   0.357  u_music_player/speaker77 (speaker_OBUF)
+     FDCE:C->Q           124   0.495   1.164  u_music_player/addr_ctrl/addr_2 (u_music_player/addr_ctrl/addr_2)
+     LUT4_D:I1->O         11   0.562   0.816  u_music_player/rom/Mrom_data1451 (u_music_player/rom/Mrom_data145)
+     LUT3:I2->O            1   0.561   0.000  u_music_player/rom/Mrom_data1521_111 (u_music_player/rom/Mrom_data1521_111)
+     MUXF5:I0->O           1   0.229   0.000  u_music_player/rom/Mrom_data1521_9_f5_0 (u_music_player/rom/Mrom_data1521_9_f51)
+     MUXF6:I1->O           2   0.239   0.382  u_music_player/rom/Mrom_data1521_8_f6 (u_music_player/rom/Mrom_data1521_8_f6)
+     LUT4:I3->O            1   0.561   0.423  u_music_player/rom/Mrom_data1521_6_f7_SW0 (N123)
+     LUT3:I1->O            1   0.562   0.000  u_music_player/rom/Mrom_data1521_2_f5_G (N210)
+     MUXF5:I1->O          20   0.229   1.003  u_music_player/rom/Mrom_data1521_2_f5 (u_music_player/rom_data<5>1)
+     LUT2:I1->O            1   0.562   0.380  u_music_player/speaker3 (u_music_player/speaker3)
+     LUT4:I2->O            1   0.561   0.423  u_music_player/speaker11 (u_music_player/speaker11)
+     LUT4:I1->O            1   0.562   0.357  u_music_player/speaker71 (speaker_OBUF)
      OBUF:I->O                 4.396          speaker_OBUF (speaker)
     ----------------------------------------
-    Total                     13.006ns (8.726ns logic, 4.280ns route)
-                                       (67.1% logic, 32.9% route)
+    Total                     14.466ns (9.519ns logic, 4.947ns route)
+                                       (65.8% logic, 34.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'u_music_player/scale_div/scale_out'
+Timing constraint: Default path analysis
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              7.282ns (Levels of Logic = 3)
-  Source:            u_music_player/octave_div/octave_out (FF)
+Delay:               7.730ns (Levels of Logic = 4)
+  Source:            music_on (PAD)
   Destination:       speaker (PAD)
-  Source Clock:      u_music_player/scale_div/scale_out rising
 
-  Data Path: u_music_player/octave_div/octave_out to speaker
+  Data Path: music_on to speaker
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.495   0.446  u_music_player/octave_div/octave_out (u_music_player/octave_div/octave_out)
-     LUT2:I1->O            1   0.562   0.465  u_music_player/speaker74 (u_music_player/speaker74)
-     LUT4:I0->O            1   0.561   0.357  u_music_player/speaker77 (speaker_OBUF)
+     IBUF:I->O             4   0.824   0.565  music_on_IBUF (music_on_IBUF)
+     LUT3:I1->O            1   0.562   0.465  u_music_player/speaker68 (u_music_player/speaker68)
+     LUT4:I0->O            1   0.561   0.357  u_music_player/speaker71 (speaker_OBUF)
      OBUF:I->O                 4.396          speaker_OBUF (speaker)
     ----------------------------------------
-    Total                      7.282ns (6.014ns logic, 1.268ns route)
-                                       (82.6% logic, 17.4% route)
+    Total                      7.730ns (6.343ns logic, 1.387ns route)
+                                       (82.1% logic, 17.9% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.28 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.41 secs
  
 --> 
 
-Total memory usage is 343180 kilobytes
+Total memory usage is 343176 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of warnings :   17 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
 

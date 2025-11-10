@@ -42,10 +42,15 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="clk_divider_precise_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="clk_divider_precise_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clk_divider_precise_tb_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="clk_gen_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clk_gen_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clk_gen_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="matrix_key_control_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="matrix_key_control_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="music_player_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="music_player_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="music_player_tb_isim_beh.exe"/>
@@ -75,11 +80,9 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="music_system_top.ut" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="music_system_top.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="music_system_top.xst"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="music_system_top_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="music_system_top_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="music_system_top_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="music_system_top_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="music_system_top_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="music_system_top_map.map" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="music_system_top_map.mrp" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="music_system_top_map.ncd" xil_pn:subbranch="Map"/>
@@ -137,6 +140,10 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="song_selector_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="song_selector_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="song_selector_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_clk_gen_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_clk_gen_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_clk_gen_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_clk_gen_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_matrix_key_control_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_matrix_key_control_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_music_system_isim_beh.exe"/>
@@ -153,20 +160,23 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1762307474" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1762307474">
+    <transform xil_pn:end_ts="1762484991" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1762484991">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1762390603" xil_pn:in_ck="6100943655759899834" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1762390603">
+    <transform xil_pn:end_ts="1762695790" xil_pn:in_ck="-6380131797969216579" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1762695790">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="addr_control.v"/>
       <outfile xil_pn:name="clk_div_8hz.v"/>
       <outfile xil_pn:name="clk_div_8hz_tb.v"/>
+      <outfile xil_pn:name="clk_gen.v"/>
+      <outfile xil_pn:name="clk_gen_tb.v"/>
       <outfile xil_pn:name="matrix_key_control.v"/>
       <outfile xil_pn:name="matrix_key_control_tb.v"/>
       <outfile xil_pn:name="music_player.v"/>
@@ -179,19 +189,19 @@
       <outfile xil_pn:name="song_selector.v"/>
       <outfile xil_pn:name="song_selector_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1762348819" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5324877154159137490" xil_pn:start_ts="1762348819">
+    <transform xil_pn:end_ts="1762695794" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="3204316193815795391" xil_pn:start_ts="1762695794">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1762348819" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="2432190998767542390" xil_pn:start_ts="1762348819">
+    <transform xil_pn:end_ts="1762695794" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="5990906737376133159" xil_pn:start_ts="1762695794">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1762307474" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="224536236742977840" xil_pn:start_ts="1762307474">
+    <transform xil_pn:end_ts="1762484991" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="224536236742977840" xil_pn:start_ts="1762484991">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1762388521" xil_pn:in_ck="6100943655759899834" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1762388521">
+    <transform xil_pn:end_ts="1762695794" xil_pn:in_ck="-6380131797969216579" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1762695794">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -202,6 +212,8 @@
       <outfile xil_pn:name="addr_control.v"/>
       <outfile xil_pn:name="clk_div_8hz.v"/>
       <outfile xil_pn:name="clk_div_8hz_tb.v"/>
+      <outfile xil_pn:name="clk_gen.v"/>
+      <outfile xil_pn:name="clk_gen_tb.v"/>
       <outfile xil_pn:name="matrix_key_control.v"/>
       <outfile xil_pn:name="matrix_key_control_tb.v"/>
       <outfile xil_pn:name="music_player.v"/>
@@ -214,10 +226,11 @@
       <outfile xil_pn:name="song_selector.v"/>
       <outfile xil_pn:name="song_selector_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1762388528" xil_pn:in_ck="6100943655759899834" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="2604824151531867385" xil_pn:start_ts="1762388521">
+    <transform xil_pn:end_ts="1762695800" xil_pn:in_ck="-6380131797969216579" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6887490648593364187" xil_pn:start_ts="1762695794">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
@@ -225,19 +238,20 @@
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="music_system_top_beh.prj"/>
-      <outfile xil_pn:name="music_system_top_isim_beh.exe"/>
+      <outfile xil_pn:name="tb_clk_gen_beh.prj"/>
+      <outfile xil_pn:name="tb_clk_gen_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1762388528" xil_pn:in_ck="-3278301699772906229" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3030014949512226724" xil_pn:start_ts="1762388528">
+    <transform xil_pn:end_ts="1762695801" xil_pn:in_ck="4184874833519067344" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8334249574955443298" xil_pn:start_ts="1762695800">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="music_system_top_isim_beh.wdb"/>
+      <outfile xil_pn:name="tb_clk_gen_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1762237171" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1762237171">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -267,7 +281,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1762399012" xil_pn:in_ck="-2510989961446999664" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-2566252252976817555" xil_pn:start_ts="1762398998">
+    <transform xil_pn:end_ts="1762739225" xil_pn:in_ck="1905743954915743908" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-2566252252976817555" xil_pn:start_ts="1762739207">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -281,18 +295,17 @@
       <outfile xil_pn:name="music_system_top.stx"/>
       <outfile xil_pn:name="music_system_top.syr"/>
       <outfile xil_pn:name="music_system_top.xst"/>
-      <outfile xil_pn:name="music_system_top_beh.prj"/>
       <outfile xil_pn:name="music_system_top_stx_beh.prj"/>
       <outfile xil_pn:name="music_system_top_xst.xrpt"/>
       <outfile xil_pn:name="song_selector.ngr"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1762310764" xil_pn:in_ck="8610739755415751971" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-4224631190019048231" xil_pn:start_ts="1762310764">
+    <transform xil_pn:end_ts="1762738374" xil_pn:in_ck="8610739755415751971" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-4224631190019048231" xil_pn:start_ts="1762738374">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1762399021" xil_pn:in_ck="5926295921521885533" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-266247057861424995" xil_pn:start_ts="1762399012">
+    <transform xil_pn:end_ts="1762739234" xil_pn:in_ck="5926295921521885533" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-266247057861424995" xil_pn:start_ts="1762739225">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_ngo"/>
@@ -301,7 +314,7 @@
       <outfile xil_pn:name="music_system_top.ngd"/>
       <outfile xil_pn:name="music_system_top_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1762399028" xil_pn:in_ck="1918871985701514751" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-7298783698718769783" xil_pn:start_ts="1762399021">
+    <transform xil_pn:end_ts="1762739241" xil_pn:in_ck="1918871985701514751" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-7298783698718769783" xil_pn:start_ts="1762739234">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -317,7 +330,7 @@
       <outfile xil_pn:name="music_system_top_summary.xml"/>
       <outfile xil_pn:name="music_system_top_usage.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1762399051" xil_pn:in_ck="-4176615380739843503" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-3620386074766820064" xil_pn:start_ts="1762399028">
+    <transform xil_pn:end_ts="1762739274" xil_pn:in_ck="-4176615380739843503" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-3620386074766820064" xil_pn:start_ts="1762739241">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -332,7 +345,7 @@
       <outfile xil_pn:name="music_system_top_pad.txt"/>
       <outfile xil_pn:name="music_system_top_par.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1762399076" xil_pn:in_ck="-9212691906172280332" xil_pn:name="TRANEXT_bitFile_spartan3a" xil_pn:prop_ck="8242823369169169445" xil_pn:start_ts="1762399060">
+    <transform xil_pn:end_ts="1762739290" xil_pn:in_ck="-9212691906172280332" xil_pn:name="TRANEXT_bitFile_spartan3a" xil_pn:prop_ck="8242823369169169445" xil_pn:start_ts="1762739274">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
@@ -344,23 +357,24 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1762390896" xil_pn:in_ck="8610739755415731492" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="3725548802311211136" xil_pn:start_ts="1762390893">
+    <transform xil_pn:end_ts="1762739385" xil_pn:in_ck="8610739755415731492" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="3725548802311211136" xil_pn:start_ts="1762739382">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_impact.cmd"/>
       <outfile xil_pn:name="_impact.log"/>
     </transform>
-    <transform xil_pn:end_ts="1762394972" xil_pn:in_ck="8610739755415731492" xil_pn:name="TRAN_genImpactFile" xil_pn:prop_ck="7115266323808781642" xil_pn:start_ts="1762394969">
+    <transform xil_pn:end_ts="1762474128" xil_pn:in_ck="8610739755415731492" xil_pn:name="TRAN_genImpactFile" xil_pn:prop_ck="7115266323808781642" xil_pn:start_ts="1762474126">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <outfile xil_pn:name="_impact.cmd"/>
-      <outfile xil_pn:name="_impact.log"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1762399051" xil_pn:in_ck="-4056746623586538889" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1762399046">
+    <transform xil_pn:end_ts="1762739274" xil_pn:in_ck="-4056746623586538889" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1762739271">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

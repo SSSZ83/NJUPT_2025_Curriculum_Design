@@ -16,5 +16,14 @@
 	<arg fmt="%s" index="2">u_music_player/clk_gen_8hz/Mcount_cnt_cy&lt;0&gt;</arg>
 </msg>
 
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">u_music_player/rom/Mrom_data1881_7</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">u_music_player/rom/Mrom_data1881_6_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">u_music_player/rom/Mrom_data1121_124</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">u_music_player/rom/Mrom_data301_9_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">u_music_player/rom/Mrom_data821_6</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">u_music_player/rom/Mrom_data601_7_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the GYMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
 </messages>
 

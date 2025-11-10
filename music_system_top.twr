@@ -45,8 +45,9 @@ Setup/Hold to clock clk_1k
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-matrix_col0 |    0.088(R)|    0.795(R)|clk_1k_BUFGP      |   0.000|
-matrix_col1 |    1.323(R)|   -0.200(R)|clk_1k_BUFGP      |   0.000|
+matrix_col0 |    0.092(R)|    0.791(R)|clk_1k_BUFGP      |   0.000|
+matrix_col1 |    0.413(R)|    0.528(R)|clk_1k_BUFGP      |   0.000|
+matrix_col2 |    0.711(R)|    0.286(R)|clk_1k_BUFGP      |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk_1k to Pad
@@ -54,9 +55,9 @@ Clock clk_1k to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-led1        |    7.918(R)|clk_1k_BUFGP      |   0.000|
-led2        |    7.787(R)|clk_1k_BUFGP      |   0.000|
-led3        |    7.550(R)|clk_1k_BUFGP      |   0.000|
+led1        |    7.820(R)|clk_1k_BUFGP      |   0.000|
+led2        |    7.924(R)|clk_1k_BUFGP      |   0.000|
+led3        |    7.922(R)|clk_1k_BUFGP      |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk_1k
@@ -64,19 +65,26 @@ Clock to Setup on destination clock clk_1k
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_1k         |    2.748|         |         |         |
+clk_1k         |    3.135|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock clk_535k
+Clock to Setup on destination clock clk_2m
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_535k       |    6.656|         |         |         |
+clk_2m         |    3.988|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+music_on       |speaker        |   10.125|
+---------------+---------------+---------+
 
-Analysis completed Thu Nov 06 11:17:29 2025 
+
+Analysis completed Mon Nov 10 09:47:53 2025 
 --------------------------------------------------------------------------------
 
 Trace Settings:

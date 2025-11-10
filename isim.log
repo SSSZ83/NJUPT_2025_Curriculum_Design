@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\projects\B23020317\music_system_top_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/projects/B23020317/music_system_top_isim_beh.wdb 
+Running: C:\projects\B23020317\tb_clk_gen_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/projects/B23020317/tb_clk_gen_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 ----------------------------------------------------------------------
 WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
@@ -13,56 +13,76 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+时间:               135000, 输出时钟周期: 0, 当前周期: 0.000ns, 频率: 0.000MHz
+=== 3.73分频测试开始 ===
+开始时间:               200000
 # restart
-# isim force add /music_system_top/clk_535k 1 -radix bin -value 0 -radix bin -time 915 ns -repeat 1830 ns
-# isim force add /music_system_top/clk_1k 1 -radix bin -value 0 -radix bin -time 500 us -repeat 1 ms
-# isim force add /music_system_top/matrix_col0 1 -radix bin
-# isim force add /music_system_top/matrix_col1 0 -radix bin
-# run 100ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
 # run all
-Stopped at time : 19102584930 ns : File "C:/projects/B23020317/clk_div_8hz.v" Line 32
-# restart
-# run 100ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# restart
-# isim force add /music_system_top/clk_535k 1 -radix bin -value 0 -radix bin -time 915 ns -repeat 1830 ns
-# isim force add /music_system_top/clk_1k 1 -radix bin -value 0 -radix bin -time 500 us -repeat 1 ms
-# isim force add /music_system_top/matrix_col0 1 -radix bin
-# isim force add /music_system_top/matrix_col1 0 -radix bin
-# run 100ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# run 100ms
-# run 100ms
-# isim force add /music_system_top/matrix_col1 1 -radix bin
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# isim force add /music_system_top/matrix_col0 0 -radix bin
-# run 100ms
-# run 100ms
-# run 100ms
-# isim force add /music_system_top/matrix_col0 1 -radix bin
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
-# run 100ms
+时间:               135000, 输出时钟周期: 0, 当前周期: 0.000ns, 频率: 0.000MHz
+=== 3.73分频测试开始 ===
+开始时间:               200000
+时间:              2005000, 输出时钟周期: 50, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:              3865000, 输出时钟周期: 100, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:              5735000, 输出时钟周期: 150, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:              7595000, 输出时钟周期: 200, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:              9465000, 输出时钟周期: 250, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             11325000, 输出时钟周期: 300, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             13195000, 输出时钟周期: 350, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             15055000, 输出时钟周期: 400, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             16925000, 输出时钟周期: 450, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             18785000, 输出时钟周期: 500, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             20655000, 输出时钟周期: 550, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             22515000, 输出时钟周期: 600, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             24385000, 输出时钟周期: 650, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             26245000, 输出时钟周期: 700, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             28115000, 输出时钟周期: 750, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             29975000, 输出时钟周期: 800, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             31845000, 输出时钟周期: 850, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             33705000, 输出时钟周期: 900, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             35575000, 输出时钟周期: 950, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             37435000, 输出时钟周期: 1000, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             39305000, 输出时钟周期: 1050, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             41165000, 输出时钟周期: 1100, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             43035000, 输出时钟周期: 1150, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             44895000, 输出时钟周期: 1200, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             46765000, 输出时钟周期: 1250, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             48625000, 输出时钟周期: 1300, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             50495000, 输出时钟周期: 1350, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             52355000, 输出时钟周期: 1400, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             54225000, 输出时钟周期: 1450, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             56085000, 输出时钟周期: 1500, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             57955000, 输出时钟周期: 1550, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             59815000, 输出时钟周期: 1600, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             61685000, 输出时钟周期: 1650, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             63545000, 输出时钟周期: 1700, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             65415000, 输出时钟周期: 1750, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             67275000, 输出时钟周期: 1800, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             69145000, 输出时钟周期: 1850, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             71005000, 输出时钟周期: 1900, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             72875000, 输出时钟周期: 1950, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             74735000, 输出时钟周期: 2000, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             76605000, 输出时钟周期: 2050, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             78465000, 输出时钟周期: 2100, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             80335000, 输出时钟周期: 2150, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             82195000, 输出时钟周期: 2200, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             84065000, 输出时钟周期: 2250, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             85925000, 输出时钟周期: 2300, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             87795000, 输出时钟周期: 2350, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             89655000, 输出时钟周期: 2400, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             91525000, 输出时钟周期: 2450, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             93385000, 输出时钟周期: 2500, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             95255000, 输出时钟周期: 2550, 当前周期: 0.040ns, 频率: 25000.000MHz
+时间:             97115000, 输出时钟周期: 2600, 当前周期: 0.030ns, 频率: 33333.333MHz
+时间:             98985000, 输出时钟周期: 2650, 当前周期: 0.040ns, 频率: 25000.000MHz
+
+=== 测试结果 ===
+总输入时钟周期数: 10010
+输出时钟周期数: 2683
+实测分频比: 3.731
+理论分频比: 3.730
+误差: 0.024%
+
+测试完成!
+Stopped at time : 100200 ns : File "C:/projects/B23020317/clk_gen_tb.v" Line 93

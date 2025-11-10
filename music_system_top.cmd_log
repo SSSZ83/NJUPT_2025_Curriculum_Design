@@ -79,3 +79,107 @@ map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_
 par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
 trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
 bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 
+xst -intstyle ise -ifn "C:/projects/B23020317/music_system_top.xst" -ofn "C:/projects/B23020317/music_system_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc music_system_top.ucf -p xc3s50an-tqg144-5 music_system_top.ngc music_system_top.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o music_system_top_map.ncd music_system_top.ngd music_system_top.pcf 
+par -w -intstyle ise -ol high -t 1 music_system_top_map.ncd music_system_top.ncd music_system_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml music_system_top.twx music_system_top.ncd -o music_system_top.twr music_system_top.pcf -ucf music_system_top.ucf 
+bitgen -intstyle ise -f music_system_top.ut music_system_top.ncd 

@@ -9,11 +9,11 @@ NET "clk_1k" LOC = P124;
 
 # PlanAhead Generated IO constraints 
 
-NET "clk_535k" IOSTANDARD = LVCMOS33;
+NET "clk_2m" IOSTANDARD = LVCMOS33;
 
 # PlanAhead Generated physical constraints 
 
-NET "clk_535k" LOC = P125;
+NET "clk_2m" LOC = P125;
 NET "end_flag" LOC = P10;
 
 # PlanAhead Generated IO constraints 
@@ -23,7 +23,7 @@ NET "led1" IOSTANDARD = LVCMOS33;
 
 # PlanAhead Generated physical constraints 
 
-NET "led1" LOC = P12;
+NET "led1" LOC = P15;
 NET "led2" LOC = P13;
 
 # PlanAhead Generated IO constraints 
@@ -32,7 +32,7 @@ NET "led2" IOSTANDARD = LVCMOS33;
 
 # PlanAhead Generated physical constraints 
 
-NET "led3" LOC = P15;
+NET "led3" LOC = P12;
 
 # PlanAhead Generated IO constraints 
 
@@ -59,6 +59,8 @@ NET "matrix_row0" LOC = P138;
 NET "matrix_row0" IOSTANDARD = LVCMOS33;
 NET "matrix_row0" PULLDOWN;
 
+NET "music_on" LOC = P76;
+NET "music_on" IOSTANDARD = LVCMOS33;
 # PlanAhead Generated physical constraints 
 
 NET "speaker" LOC = P3;
@@ -66,3 +68,7 @@ NET "speaker" LOC = P3;
 # PlanAhead Generated IO constraints 
 
 NET "speaker" IOSTANDARD = LVCMOS33;
+
+NET "matrix_col2" LOC = P132;  // 示例引脚，需按实际板子修改
+NET "matrix_col2" IOSTANDARD = LVCMOS33;
+NET "matrix_col2" PULLUP;  // 内部上拉，与其他列一致

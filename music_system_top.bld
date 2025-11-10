@@ -27,7 +27,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 226012 kilobytes
+Total memory usage is 227104 kilobytes
 
 Writing NGD file "music_system_top.ngd" ...
 Total REAL time to NGDBUILD completion:  6 sec
